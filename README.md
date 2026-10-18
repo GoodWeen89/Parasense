@@ -18,32 +18,29 @@ This benchmark exposes critical vulnerabilities in the attention mechanisms and 
 
 Probabilistic models evaluate text by calculating vector distances in embedding space alongside attention weights over sequence trees.
 
-```mermaid
-graph TD
-    A[PARASENSE INPUT<br/>Strict Grammar + Zero Semantic Correlation] --> B[ATTENTION MECHANISM<br/>High Structural Confidence]
-    B --> C[EMBEDDING LOOKUP<br/>Zero Probability Density]
-    C --> D[SYSTEM EXPLOIT<br/>Hallucination / Logic Collapse]
-
++-------------------------------------------------------+
+|                   PARASENSE INPUT                     |
+|  Strict Grammatical Structure + Zero Semantic Link    |
++-------------------------------------------------------+
+│
+▼
++-------------------------------------------------------+
+|                 ATTENTION MECHANISM                   |
+|  Parses syntax tree correctly -> High Confidence     |
++-------------------------------------------------------+
+│
+▼
++-------------------------------------------------------+
+|               EMBEDDING VECTOR LOOKUP                 |
+|  Distance calculations fail -> Zero Probability       |
++-------------------------------------------------------+
+│
+▼
++-------------------------------------------------------+
+|                   SYSTEM EXPLOIT                      |
+|  Model enters Hallucination or Logic Collapse         |
++-------------------------------------------------------+
 When presented with a Parasense structure, the model encounters a mathematical paradox:
-
-* **Parser Layer:** High structural confidence due to perfect grammar.
-* **Prediction Layer:** Infinite semantic distance between syntax-bound entities.
-
-This contradiction forces the model to synthesize artificial context, resulting in deterministic logic breakdowns.
-
----
-
-## Proof of Concept: Anomaly Matrix
-
-Below are sample anomaly vectors captured during controlled testing environment runs:
-
-| Test ID | Input Archetype | Target Architecture | Observed Anomaly Type | Severity |
-| :--- | :--- | :--- | :--- | :--- |
-| **PS-001** | Structural Zero-Vector Nullification | Proprietary LLM (v4 Class) | Contextual Hallucination (Infinite Generation Loop) | Medium |
-| **PS-002** | Syntax-Rigid Semantic Shift | Frontier Transformer (v4.5) | System Prompt Drift (Instruction Guardrail Bypass) | High |
-| **PS-003** | Recursive Non-Associative Link | Open-Weight Model (70B) | Token Breakdown (Repetitive Nonsense Output) | Critical |
-
-> **Critical Note:** Canonical production datasets and raw prompt lists are omitted from this public repository to protect intellectual property.
 
 ---
 
