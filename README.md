@@ -18,28 +18,11 @@ This benchmark exposes critical vulnerabilities in the attention mechanisms and 
 
 Probabilistic models evaluate text by calculating vector distances in embedding space alongside attention weights over sequence trees.
 
-+-----------------------------------------------------------------+
-| PARASENSE INPUT                                                 |
-| Strict Grammatical Structure + Zero Semantic Correlation        |
-+-----------------------------------------------------------------+
-                               |
-                               v
-+-----------------------------------------------------------------+
-| ATTENTION MECHANISM (LLM)                                       |
-| Parses syntax tree correctly -> High structural confidence      |
-+-----------------------------------------------------------------+
-                               |
-                               v
-+-----------------------------------------------------------------+
-| EMBEDDING VECTOR LOOKUP                                         |
-| Distance calculations fail -> Zero probability density          |
-+-----------------------------------------------------------------+
-                               |
-                               v
-+-----------------------------------------------------------------+
-| SYSTEM EXPLOIT                                                  |
-| Model enters Hallucination, Logic Collapse, or Prompt Drift     |
-+-----------------------------------------------------------------+
+```mermaid
+graph TD
+    A[PARASENSE INPUT<br/>Strict Grammar + Zero Semantic Correlation] --> B[ATTENTION MECHANISM<br/>High Structural Confidence]
+    B --> C[EMBEDDING LOOKUP<br/>Zero Probability Density]
+    C --> D[SYSTEM EXPLOIT<br/>Hallucination / Logic Collapse]
 
 When presented with a Parasense structure, the model encounters a mathematical paradox:
 
